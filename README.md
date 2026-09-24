@@ -4,7 +4,7 @@ Welcome! This is the codebase for **Kaksju Cars**, a fictional luxury car brand 
 
 ---
 
-## 📁 What's in This Project
+## What's in This Project
 
 | File | What it is |
 |---|---|
@@ -19,7 +19,7 @@ All four site versions use the **same CSS classes**, so `style.css` is shared ac
 
 ---
 
-## 🎨 Design System (`style.css`)
+## Design System (`style.css`)
 
 The visual identity is built around a **luxury black-and-gold palette**, meant to feel premium, minimal, and high-end:
 
@@ -30,7 +30,7 @@ The visual identity is built around a **luxury black-and-gold palette**, meant t
 
 ---
 
-## 🧱 Site Sections (present in every version)
+## Site Sections (present in every version)
 
 1. **Navbar** — fixed at the top, transparent over the hero, turns solid on scroll
 2. **Hero** — full-screen intro with headline, tagline, and two call-to-action buttons
@@ -43,7 +43,7 @@ The visual identity is built around a **luxury black-and-gold palette**, meant t
 
 ---
 
-## ⚠️ About the Images
+## About the Images
 
 The images currently used in every version (`picsum.photos` links) are **random placeholder stock photos** — not actual car photos. They're there purely to hold the layout together.
 
@@ -56,7 +56,7 @@ Real photos of *other* car brands should **not** be used here, since that would 
 
 ---
 
-## 🧩 How to Use Each Version
+##How to Use Each Version
 
 ### 1. Static HTML (`index.html` + `script.js`)
 Simplest option — no build tools or server required.
@@ -90,7 +90,7 @@ your-project/
 
 ---
 
-## ✅ Before Launch Checklist
+## Before Launch Checklist
 
 - [ ] Replace all placeholder images with real photography/renders
 - [ ] Update contact email and phone number in the footer and `contact-handler.php`
