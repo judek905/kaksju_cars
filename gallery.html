@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Kaksju Cars</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">KAKSJU<span>.</span></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <!-- Distinct page header: photo background, different image/mood from About -->
+  <section class="page-header gallery-header">
+    <span class="eyebrow">Gallery</span>
+    <h1>Crafted to <span class="gold-text">Perfection</span></h1>
+  </section>
+
+  <section>
+    <div class="gallery">
+      <div class="gallery-item tilt-card">
+        <img src="https://picsum.photos/seed/kaksju-g1/600/800" alt="Kaksju interior detail">
+        <div class="overlay"><span class="gold-text">Interior Craftsmanship</span></div>
+      </div>
+      <div class="gallery-item tilt-card">
+        <img src="https://picsum.photos/seed/kaksju-g2/600/800" alt="Kaksju exterior detail">
+        <div class="overlay"><span class="gold-text">Exterior Design</span></div>
+      </div>
+      <div class="gallery-item tilt-card">
+        <img src="https://picsum.photos/seed/kaksju-g3/600/800" alt="Kaksju factory floor">
+        <div class="overlay"><span class="gold-text">Built in Africa</span></div>
+      </div>
+      <div class="gallery-item tilt-card">
+        <img src="https://picsum.photos/seed/kaksju-g4/600/800" alt="Kaksju test drive">
+        <div class="overlay"><span class="gold-text">On the Road</span></div>
+      </div>
+      <div class="gallery-item tilt-card">
+        <img src="https://picsum.photos/seed/kaksju-g5/600/800" alt="Kaksju showroom">
+        <div class="overlay"><span class="gold-text">Showroom Experience</span></div>
+      </div>
+      <div class="gallery-item tilt-card">
+        <img src="https://picsum.photos/seed/kaksju-g6/600/800" alt="Kaksju design studio">
+        <div class="overlay"><span class="gold-text">Design Studio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta text-center">
+    <div class="container">
+      <span class="eyebrow">Like What You See?</span>
+      <h2>See It <span class="gold-text">In Person</span></h2>
+      <a href="contact.html" class="btn btn-solid" style="margin-top:20px;">Book a Showroom Visit</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>Kaksju Cars</h4>
+        <p style="color:var(--color-gray);">Africa's home for automotive luxury. Designed, engineered, and built with pride on African soil.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="models.html">Models</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info@kaksjucars.com">info@kaksjucars.com</a>
+        <a href="tel:+254700000000">+254 700 000 000</a>
+        <a href="#">Nairobi · Lagos · Johannesburg</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      &copy; <span id="year"></span> Kaksju Cars. Made in Africa. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

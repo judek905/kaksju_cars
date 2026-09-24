@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Models | Kaksju Cars</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">KAKSJU<span>.</span></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <!-- Distinct page header: gradient, no photo, different feel from About page -->
+  <section class="page-header models-header">
+    <span class="eyebrow">The Full Lineup</span>
+    <h1>Every Kaksju, <span class="gold-text">One Standard</span></h1>
+    <p style="margin-top:16px;">Hover or tilt your device over each model for a 3D preview.</p>
+  </section>
+
+  <section class="section container">
+    <div class="model-3d-wrapper features-grid">
+
+      <div class="feature-item model-3d">
+        <img src="https://picsum.photos/seed/kaksju-model1/500/350" alt="Kaksju Aurea sedan" style="margin-bottom:20px;border:1px solid var(--color-border);">
+        <h3>Kaksju Aurea</h3>
+        <p>A flagship sedan blending elegance and power — the signature of modern African luxury.</p>
+        <p class="gold-text" style="margin-top:10px;font-family:var(--font-heading);font-size:1.3rem;">From $68,000</p>
+        <ul style="text-align:left;color:var(--color-gray);margin-top:16px;font-size:0.9rem;">
+          <li>420 hp Twin-Turbo V6</li>
+          <li>0–100 km/h in 4.6s</li>
+          <li>Hand-stitched leather interior</li>
+        </ul>
+      </div>
+
+      <div class="feature-item model-3d">
+        <img src="https://picsum.photos/seed/kaksju-model2/500/350" alt="Kaksju Simba SUV" style="margin-bottom:20px;border:1px solid var(--color-border);">
+        <h3>Kaksju Simba</h3>
+        <p>A bold luxury SUV built for African roads and global ambitions.</p>
+        <p class="gold-text" style="margin-top:10px;font-family:var(--font-heading);font-size:1.3rem;">From $82,500</p>
+        <ul style="text-align:left;color:var(--color-gray);margin-top:16px;font-size:0.9rem;">
+          <li>Adaptive all-terrain suspension</li>
+          <li>7-seat configuration</li>
+          <li>Panoramic glass roof</li>
+        </ul>
+      </div>
+
+      <div class="feature-item model-3d">
+        <img src="https://picsum.photos/seed/kaksju-model3/500/350" alt="Kaksju Zuri coupe" style="margin-bottom:20px;border:1px solid var(--color-border);">
+        <h3>Kaksju Zuri</h3>
+        <p>A sleek performance coupe designed for those who lead, not follow.</p>
+        <p class="gold-text" style="margin-top:10px;font-family:var(--font-heading);font-size:1.3rem;">From $95,000</p>
+        <ul style="text-align:left;color:var(--color-gray);margin-top:16px;font-size:0.9rem;">
+          <li>510 hp performance engine</li>
+          <li>Carbon-fiber body panels</li>
+          <li>Track-tuned suspension</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section cta text-center">
+    <div class="container">
+      <span class="eyebrow">Find Your Kaksju</span>
+      <h2>Book a Private <span class="gold-text">Test Drive</span></h2>
+      <a href="contact.html" class="btn btn-solid" style="margin-top:20px;">Contact a Showroom</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>Kaksju Cars</h4>
+        <p style="color:var(--color-gray);">Africa's home for automotive luxury. Designed, engineered, and built with pride on African soil.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="models.html">Models</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info@kaksjucars.com">info@kaksjucars.com</a>
+        <a href="tel:+254700000000">+254 700 000 000</a>
+        <a href="#">Nairobi · Lagos · Johannesburg</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      &copy; <span id="year"></span> Kaksju Cars. Made in Africa. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

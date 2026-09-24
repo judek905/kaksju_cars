@@ -1,0 +1,827 @@
+/* ================================================================
+   LUXURY COMPANY WEBSITE — STYLE.CSS
+   A premium, minimal, high-contrast design system built around
+   deep black, warm gold accents, and elegant serif typography —
+   the visual language of luxury brands.
+   ================================================================ */
+
+
+/* ============================================
+   GOOGLE FONTS
+   Playfair Display = elegant serif for headings
+   Jost = clean modern sans-serif for body text
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+
+/* ============================================
+   CSS VARIABLES (DESIGN TOKENS)
+   Centralizes the color palette, fonts, and
+   spacing so the whole theme can be adjusted
+   from one place
+   ============================================ */
+:root {
+  /* Colors */
+  --color-black: #0a0a0a;        /* rich near-black background */
+  --color-charcoal: #161616;      /* slightly lighter black for sections */
+  --color-gold: #c9a24b;           /* primary luxury accent color */
+  --color-gold-light: #e2c98a;      /* lighter gold for hover states */
+  --color-cream: #f5f1e8;            /* warm off-white for text on dark bg */
+  --color-gray: #9a9a9a;              /* muted gray for secondary text */
+  --color-border: rgba(201, 162, 75, 0.25); /* faint gold border color */
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif; /* elegant serif for headings */
+  --font-body: 'Jost', sans-serif;             /* clean sans-serif for body copy */
+
+  /* Spacing */
+  --section-padding: 120px 20px; /* generous vertical breathing room */
+  --container-width: 1200px;      /* max content width */
+
+  /* Transitions */
+  --transition-slow: 0.5s ease;   /* smooth, unhurried motion befitting luxury */
+}
+
+
+/* ============================================
+   RESET / BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* predictable sizing across all elements */
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scrolling for anchor links */
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-black);
+  color: var(--color-cream);
+  line-height: 1.8;              /* generous line height = airy, premium feel */
+  letter-spacing: 0.3px;          /* slight letter spacing reads as refined */
+  font-weight: 300;                /* light weight for elegance */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+::selection {
+  background: var(--color-gold);   /* gold highlight when text is selected */
+  color: var(--color-black);
+}
+
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-cream);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* scales fluidly with screen size */
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--color-gray);
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 4px;          /* wide tracking = classic luxury label style */
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+}
+
+.gold-text {
+  color: var(--color-gold); /* utility class to highlight a word in gold */
+}
+
+
+/* ============================================
+   LAYOUT HELPERS
+   ============================================ */
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.divider {
+  width: 60px;              /* short decorative line used under headings */
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: 24px auto;
+}
+
+
+/* ============================================
+   HEADER / NAVIGATION
+   Transparent over hero, solid on scroll
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 5%;
+  background: transparent;
+  transition: background-color var(--transition-slow), padding var(--transition-slow);
+}
+
+.navbar.scrolled {
+  background-color: rgba(10, 10, 10, 0.95); /* darkens on scroll (toggle via JS) */
+  padding: 18px 5%;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar .logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--color-cream);
+}
+
+.navbar .logo span {
+  color: var(--color-gold); /* accent letter or symbol in the logo */
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-cream);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';                       /* underline effect drawn with a pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width var(--transition-slow); /* underline grows smoothly on hover */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* ============================================
+   HERO SECTION
+   Full-height, cinematic, centered content
+   ============================================ */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.8)),
+              url('hero-image.jpg') center/cover no-repeat; /* replace with your image */
+  padding: 0 20px;
+}
+
+.hero p {
+  max-width: 500px;
+  margin: 20px auto 40px;
+}
+
+
+/* ============================================
+   BUTTONS
+   Minimal, outlined, with a fill-on-hover effect
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 16px 42px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color var(--transition-slow);
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';                    /* fill layer that slides in behind the text */
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-gold);
+  transition: left var(--transition-slow);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: var(--color-black); /* text darkens as gold fill slides in */
+}
+
+.btn:hover::before {
+  left: 0;
+}
+
+.btn-solid {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-solid:hover {
+  background-color: var(--color-gold-light);
+}
+
+
+/* ============================================
+   ABOUT / STORY SECTION
+   Two-column layout: image + text
+   ============================================ */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background-color: var(--color-charcoal); /* slightly lighter than page bg for contrast */
+}
+
+.about img {
+  border: 1px solid var(--color-border); /* thin gold-tinted frame around image */
+}
+
+
+/* ============================================
+   SERVICES / FEATURES GRID
+   ============================================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 40px 20px;
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-slow), transform var(--transition-slow);
+}
+
+.feature-item:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-6px); /* subtle lift for a refined hover interaction */
+}
+
+.feature-item .icon {
+  font-size: 2rem;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+}
+
+
+/* ============================================
+   PRODUCT / GALLERY SECTION
+   ============================================ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4px; /* tight gaps create a seamless editorial gallery look */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08); /* slow zoom-in on hover, common in luxury galleries */
+}
+
+.gallery-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1; /* caption/label fades in on hover */
+}
+
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonial {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--color-cream);
+  margin: 0 auto 24px;
+}
+
+.testimonial .author {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+}
+
+
+/* ============================================
+   CONTACT / CTA SECTION
+   ============================================ */
+.cta {
+  text-align: center;
+  background-color: var(--color-charcoal);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-cream);
+  padding: 12px 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-slow);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-gold); /* gold underline on focus */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--color-gray);
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background-color: var(--color-black);
+  padding: 60px 5% 30px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-grid h4 {
+  color: var(--color-gold);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.footer-grid a {
+  display: block;
+  color: var(--color-gray);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  transition: color var(--transition-slow);
+}
+
+.footer-grid a:hover {
+  color: var(--color-gold-light);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-gray);
+  letter-spacing: 1px;
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 992px) {
+  .about {
+    grid-template-columns: 1fr; /* stack image and text on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide nav links — pair with a JS-driven mobile menu toggle */
+  }
+
+  .hero p {
+    max-width: 90%;
+  }
+
+  :root {
+    --section-padding: 80px 20px; /* tighter spacing on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .navbar {
+    padding: 20px 5%;
+  }
+}
+
+
+/* ================================================================
+   ADDED FOR MULTI-PAGE SITE: DRIVING CAR + 3D EFFECTS
+   ================================================================ */
+
+/* ============================================
+   DRIVING CAR ANIMATION (Home Page Hero)
+   An SVG car drives across the hero, with a
+   subtle 3D "pop forward" as it passes center,
+   plus spinning wheels and a moving road line.
+   ============================================ */
+.car-scene {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 800px; /* gives the scene 3D depth so translateZ has an effect */
+}
+
+.road-line {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-gold) 0,
+    var(--color-gold) 24px,
+    transparent 24px,
+    transparent 48px
+  );
+  opacity: 0.35;
+  animation: roadMove 1s linear infinite; /* illusion of the road scrolling under the car */
+}
+
+@keyframes roadMove {
+  from { background-position-x: 0; }
+  to   { background-position-x: -48px; }
+}
+
+.driving-car {
+  position: absolute;
+  bottom: 20px;
+  left: -220px;
+  width: 190px;
+  transform-style: preserve-3d;
+  animation: driveAcross 9s ease-in-out infinite; /* loops the drive-by continuously */
+}
+
+@keyframes driveAcross {
+  0%   { left: -220px; transform: translateZ(0) scale(1); }
+  45%  { transform: translateZ(0) scale(1); }
+  50%  { left: 50%; transform: translateX(-50%) translateZ(70px) scale(1.18); } /* car "pops" toward viewer mid-drive */
+  55%  { transform: translateX(-50%) translateZ(0) scale(1); }
+  100% { left: 112%; transform: translateZ(0) scale(1); }
+}
+
+.driving-car .wheel {
+  animation: wheelSpin 0.35s linear infinite; /* continuous wheel rotation */
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes wheelSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ============================================
+   3D MODEL CARD SHOWCASE (Models Page)
+   Cards tilt toward the cursor and the car
+   image lifts forward, simulating a 3D turntable
+   ============================================ */
+.model-3d-wrapper {
+  perspective: 1000px; /* sets how "close" the viewer is to the tilt plane */
+}
+
+.model-3d {
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.model-3d img {
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.model-3d:hover img {
+  transform: translateZ(35px) scale(1.04); /* image lifts out of the card in 3D space on hover */
+}
+
+
+/* ============================================
+   PAGE HEADERS
+   A shorter, distinct hero used on interior
+   pages (About / Models / Gallery / Contact) so
+   each page has its own visual identity instead
+   of repeating the homepage hero
+   ============================================ */
+.page-header {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 20px 50px;
+}
+
+.page-header.about-header {
+  background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.92)),
+              url('https://picsum.photos/seed/kaksju-about-header/1600/700') center/cover no-repeat;
+}
+
+.page-header.models-header {
+  background: linear-gradient(135deg, var(--color-charcoal), var(--color-black));
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-header.gallery-header {
+  background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.93)),
+              url('https://picsum.photos/seed/kaksju-gallery-header/1600/700') center/cover no-repeat;
+}
+
+.page-header.contact-header {
+  background-color: var(--color-charcoal);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mini-models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.timeline {
+  max-width: 700px;
+  margin: 60px auto 0;
+  border-left: 1px solid var(--color-border);
+  padding-left: 30px;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -35px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-gold); /* dot marker on the timeline */
+}
+
+.timeline-item h3 {
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+
+/* ================================================================
+   RIVAL RALLY DRIFT + BRAND REVEAL (Home Hero)
+   Two original, unbranded rival cars drift toward the viewer from
+   the horizon, cross paths in a drift, then peel off in a 3D
+   U-turn as the Kaksju wordmark scales up into view.
+   ================================================================ */
+.rally-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 1200px; /* depth for the cars traveling from horizon to viewer */
+}
+
+.rally-car {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 160px;
+  transform-style: preserve-3d;
+  opacity: 0;
+}
+
+.rally-car.car-a {
+  animation: rallyDriftA 10s ease-in-out infinite;
+}
+
+.rally-car.car-b {
+  animation: rallyDriftB 10s ease-in-out infinite;
+}
+
+/* Left-drifting rival: approaches, crosses, U-turns left, exits */
+@keyframes rallyDriftA {
+  0%   { opacity: 0; transform: translate(-50%,-50%) translateZ(-650px) translateX(-10px) scale(0.15) rotateY(0deg); }
+  8%   { opacity: 1; }
+  45%  { transform: translate(-50%,-50%) translateZ(-40px) translateX(-100px) scale(1) rotateY(-10deg); }
+  56%  { transform: translate(-50%,-50%) translateZ(50px) translateX(-30px) scale(1.2) rotateY(14deg); }  /* drift crossing point */
+  70%  { transform: translate(-50%,-50%) translateZ(140px) translateX(-150px) scale(1.35) rotateY(160deg); } /* U-turn */
+  86%  { opacity: 1; transform: translate(-50%,-50%) translateZ(190px) translateX(-520px) scale(1.4) rotateY(180deg); }
+  100% { opacity: 0; transform: translate(-50%,-50%) translateZ(190px) translateX(-750px) scale(1.4) rotateY(180deg); }
+}
+
+/* Right-drifting rival: mirrored path */
+@keyframes rallyDriftB {
+  0%   { opacity: 0; transform: translate(-50%,-50%) translateZ(-650px) translateX(10px) scale(0.15) rotateY(0deg); }
+  8%   { opacity: 1; }
+  45%  { transform: translate(-50%,-50%) translateZ(-40px) translateX(100px) scale(1) rotateY(10deg); }
+  56%  { transform: translate(-50%,-50%) translateZ(50px) translateX(30px) scale(1.2) rotateY(-14deg); }
+  70%  { transform: translate(-50%,-50%) translateZ(140px) translateX(150px) scale(1.35) rotateY(-160deg); }
+  86%  { opacity: 1; transform: translate(-50%,-50%) translateZ(190px) translateX(520px) scale(1.4) rotateY(-180deg); }
+  100% { opacity: 0; transform: translate(-50%,-50%) translateZ(190px) translateX(750px) scale(1.4) rotateY(-180deg); }
+}
+
+.dust-trail {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  width: 320px;
+  height: 40px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(201,162,75,0.3), transparent 70%);
+  filter: blur(8px);
+  animation: dustPulse 10s ease-in-out infinite; /* dust kicks up right as the cars drift past each other */
+}
+
+@keyframes dustPulse {
+  0%, 42% { opacity: 0; transform: translateX(-50%) scaleX(0.4); }
+  56%     { opacity: 0.85; transform: translateX(-50%) scaleX(1.3); }
+  75%     { opacity: 0.5; transform: translateX(-50%) scaleX(1.7); }
+  100%    { opacity: 0; transform: translateX(-50%) scaleX(1.9); }
+}
+
+.brand-reveal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.5);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: var(--color-gold);
+  opacity: 0;
+  text-shadow: 0 0 30px rgba(201,162,75,0.5);
+  white-space: nowrap;
+  animation: brandReveal 10s ease-in-out infinite; /* the payoff: brand name scales in as cars exit */
+}
+
+@keyframes brandReveal {
+  0%, 62%  { opacity: 0; transform: translate(-50%,-50%) scale(0.5); }
+  74%      { opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+  87%      { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  97%,100% { opacity: 0; transform: translate(-50%,-50%) scale(1.3); }
+}
+
+
+/* ================================================================
+   ADDITIONAL 3D STYLING — About, Gallery, Contact pages
+   Reuses the same perspective/tilt pattern as the Models page so
+   every interior page has consistent 3D depth on hover.
+   ================================================================ */
+.gallery {
+  perspective: 1200px; /* lets .model-3d tilt work on gallery items too */
+}
+
+.tilt-card {
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tilt-card img {
+  transition: transform 0.4s ease;
+}
+
+.tilt-card:hover img {
+  transform: translateZ(25px) scale(1.03); /* image lifts forward on hover, same effect as Models page */
+}

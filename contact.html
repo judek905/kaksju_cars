@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Kaksju Cars</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">KAKSJU<span>.</span></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <!-- Distinct page header: flat charcoal, calmest of all pages -->
+  <section class="page-header contact-header">
+    <span class="eyebrow">We'd Love to Hear From You</span>
+    <h1>Visit a <span class="gold-text">Kaksju</span> Showroom</h1>
+  </section>
+
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+
+      <div>
+        <span class="eyebrow">Send a Message</span>
+        <h2>Book Your Test Drive</h2>
+        <form class="contact-form" id="contactForm">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <textarea name="message" rows="4" placeholder="Tell us which model you're interested in..."></textarea>
+          <button type="submit" class="btn btn-solid">Send Message</button>
+          <p id="formStatus" style="display:none;"></p>
+        </form>
+      </div>
+
+      <div class="model-3d-wrapper">
+        <span class="eyebrow">Our Showrooms</span>
+        <h2>Find Us</h2>
+        <div class="tilt-card" style="margin-top:20px;color:var(--color-gray);padding:20px;border:1px solid var(--color-border);">
+          <p style="margin-bottom:16px;"><strong style="color:var(--color-gold);">Nairobi</strong><br>Westlands Avenue, Nairobi, Kenya</p>
+          <p style="margin-bottom:16px;"><strong style="color:var(--color-gold);">Lagos</strong><br>Victoria Island, Lagos, Nigeria</p>
+          <p style="margin-bottom:16px;"><strong style="color:var(--color-gold);">Johannesburg</strong><br>Sandton, Johannesburg, South Africa</p>
+          <p style="margin-top:30px;">
+            Email: <a href="mailto:info@kaksjucars.com" class="gold-text">info@kaksjucars.com</a><br>
+            Phone: <a href="tel:+254700000000" class="gold-text">+254 700 000 000</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>Kaksju Cars</h4>
+        <p style="color:var(--color-gray);">Africa's home for automotive luxury. Designed, engineered, and built with pride on African soil.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="models.html">Models</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info@kaksjucars.com">info@kaksjucars.com</a>
+        <a href="tel:+254700000000">+254 700 000 000</a>
+        <a href="#">Nairobi · Lagos · Johannesburg</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">X (Twitter)</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      &copy; <span id="year"></span> Kaksju Cars. Made in Africa. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
