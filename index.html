@@ -21,6 +21,18 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('kaksju-theme');
+      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersLight ? 'light' : 'dark'));
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+    <button id="themeToggle" class="theme-toggle" aria-label="Switch theme">☀️</button>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
   </header>
 
@@ -86,6 +98,7 @@
       <img src="https://picsum.photos/seed/kaksju-factory/800/600" alt="Kaksju Cars assembly facility">
     </div>
     <div>
+      
       <span class="eyebrow">Our Story</span>
       <h2>Proudly Engineered on <span class="gold-text">African Soil</span></h2>
       <p>Founded on the belief that world-class luxury doesn't need to come from anywhere else, Kaksju Cars combines African craftsmanship with cutting-edge automotive engineering.</p>

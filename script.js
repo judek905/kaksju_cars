@@ -128,3 +128,32 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+  /* ---------- DARK / LIGHT MODE TOGGLE (every page) ---------- */
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  function updateToggleIcon(theme) {
+    if (!themeToggle) return;
+    // show the icon of the mode you'll switch TO
+    themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    themeToggle.setAttribute(
+      'aria-label',
+      theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+    );
+  }
+
+  // sync the icon with whatever theme the <head> script already applied
+  updateToggleIcon(root.getAttribute('data-theme') || 'dark');
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', newTheme);
+      updateToggleIcon(newTheme);
+      try {
+        localStorage.setItem('kaksju-theme', newTheme); // remembers the choice across pages and visits
+      } catch (e) {
+        // storage blocked (private mode), the toggle still works for this page
+      }
+    });
+  }
